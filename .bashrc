@@ -43,4 +43,4 @@ alias dotfiles='/usr/bin/env git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias dockerclean='docker rm $(docker ps -a -q) && docker rmi $(docker images -q)'
 alias dc='docker-compose'
 
-alias flushdns='sudo killall -HUP mDNSResponder;say flushed'
+alias flushdns='sudo killall -HUP mDNSResponder;echo "flushed"'
