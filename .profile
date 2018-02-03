@@ -1,6 +1,6 @@
 #!/bin/sh
 
-export GOPATH=$HOME/code/go
+export GOPATH=$HOME/code/gopath
 PATH="~/bin:$PATH:~/tools/ec2-api-tools/bin:$GOPATH/bin"
 
 export EDITOR=vim
