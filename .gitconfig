@@ -14,3 +14,7 @@
   editor = vim
 [push]
   default = simple
+[user]
+	signingKey = 5DAF251FAFFAA0CAADA26EA676DCC0E8DFF43B4A
+[commit]
+	gpgSign = true

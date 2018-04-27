@@ -12,7 +12,7 @@
     telemetryConsent: "limited"
   editor:
     autoIndentOnPaste: false
-    fontSize: 15
+    fontSize: 16
   "exception-reporting":
     userId: "e6f7b11b-52d9-1e5e-9df1-546f3187e8d8"
   "git-plus":
