@@ -15,6 +15,6 @@
 [push]
   default = simple
 [user]
-	signingKey = 5DAF251FAFFAA0CAADA26EA676DCC0E8DFF43B4A
+    #name = Lucas Harms
 [commit]
 	gpgSign = true
