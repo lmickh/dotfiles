@@ -1,4 +1,5 @@
 syntax on
+colorscheme smyck
 filetype on
 filetype indent on
 filetype plugin on
