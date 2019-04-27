@@ -1,12 +1,12 @@
-#!/bin/bash
+#!/usr/bin/env bash
 if [ -z "$TMUX" ]; then
   tmux attach -t default || tmux new -s default
 fi
 
-if [ -r ~/.profile ]; then
-  source ~/.profile
-fi
+for file in ~/.{bashrc,bash_prompt,aliases}; do
+	if [[ -r "$file" ]] && [[ -f "$file" ]]; then
+		source "$file"
+	fi
+done
 
-if [ -r ~/.bashrc ]; then
-  source ~/.bashrc
-fi
+unset file

@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+
+if ls --color > /dev/null 2>&1; then
+  colorflag="--color"
+else
+  colorflag="-G"
+fi 
+
+if [[ ! "$(uname)" =~ Darwin ]]; then 
+  alias pbcopy='xclip -selection clipboard'
+  alias pbpaste='xclip -selection clipboard -o'
+fi
+
+
+alias ls="ls ${colorflag}"
+alias ll="ls -l"
+alias grep="grep --color=auto"
+
+alias dotfiles="/usr/bin/env git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+
+alias kc="kubectl"
+
+alias pubip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias ips="sudo ifconfig -a | grep -o 'inet6\\? \\(addr:\\)\\?\\s\\?\\(\\(\\([0-9]\\+\\.\\)\\{3\\}[0-9]\\+\\)\\|[a-fA-F0-9:]\\+\\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
+
+alias untar='tar xvf'
+
+# Docker crap
+alias dockerclean="docker rm $(docker ps -a -q) && docker rmi $(docker images -q)"
+alias dc="docker-compose"
+
+alias flushdns='sudo killall -HUP mDNSResponder && sudo killall mDNSResponderHelper &&  sudo dscacheutil -flushcache && echo "flushed"'
+
+# Local aliases 
+if [[ -f ~/.aliases-local ]]; then
+  . ~/.aliases-local
+fi
