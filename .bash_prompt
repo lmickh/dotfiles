@@ -53,7 +53,7 @@ prompt_git() {
 
 		[ -n "${s}" ] && s="[${s}]";
 
-		echo -e "${1}${green}(${branchName})${blue}${s}";
+		echo -e "${1}(${branchName})${s}";
 
 	else
 		return;
@@ -83,15 +83,15 @@ fi;
 if [[ "${SSH_TTY}" ]] || [[ "${SSH_CONNECTION}" ]] ; then
 	hostStyle="${bold}${cyan}";
 else
-	hostStyle="${cyan}";
+	hostStyle="${white}";
 fi;
 
-PS1="\\[${userStyle}\\]\\u"; # username
+PS1="\[${userStyle}\]\u"; # username
 PS1+="\\[${white}\\]@"; # @
 PS1+="\\[${hostStyle}\\]\\h"; # host
 PS1+="\\[${white}\\]:"; # :
 PS1+="\\[${white}\\]\\W"; # short working directory
-PS1+="\$(prompt_git \"${white} \")"; # git repository details
+PS1+="\$(prompt_git \"\[${white}\] \[${green}\]\")"; # git repository details
 PS1+="\\[${white}\\] \$ \\[${reset}\\]"; # `$` (and reset color)
 export PS1;
 
