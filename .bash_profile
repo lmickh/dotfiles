@@ -10,3 +10,8 @@ for file in ~/.{bashrc,bash_prompt,profile,aliases}; do
 done
 
 unset file
+
+# Nix 
+if [ -e /Users/lmickh/.nix-profile/etc/profile.d/nix.sh ]; then 
+    . /Users/lmickh/.nix-profile/etc/profile.d/nix.sh; 
+fi 
