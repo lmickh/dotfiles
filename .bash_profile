@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-if [ -z "$TMUX" ]; then
+if [[ -z "$TMUX" ]] && [[ "$TERM_PROGRAM" != "vscode" ]]; then
   tmux attach -t default || tmux new -s default
 fi
 
