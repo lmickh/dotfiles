@@ -15,14 +15,14 @@ if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
 
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-    . $(brew --prefix)/etc/bash_completion
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  source $HOME/.bashrc_macos
 fi
 
 if [[ -d /etc/bash_completion.d/ ]]; then
-	for file in /etc/bash_completion.d/* ; do
-		source "$file"
-	done
+  for file in /etc/bash_completion.d/* ; do
+    source "$file"
+  done
 fi
 
 if [ $(command -v aws_completer) ]; then

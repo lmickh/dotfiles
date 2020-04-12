@@ -33,6 +33,12 @@ alias dc="docker-compose"
 
 alias flushdns='sudo killall -HUP mDNSResponder && sudo killall mDNSResponderHelper &&  sudo dscacheutil -flushcache && echo "flushed"'
 
+# Linux specific aliases
+if [[ "$OSTYPE" == "linux"* ]]; then
+  alias pbcopy='xclip -selection clipboard'
+  alias pbpaste='xclip -selection clipboard -o'
+fi
+
 # Local aliases 
 if [[ -f ~/.aliases-local ]]; then
   . ~/.aliases-local
