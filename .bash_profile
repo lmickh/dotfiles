@@ -15,3 +15,4 @@ unset file
 if [ -e /Users/lmickh/.nix-profile/etc/profile.d/nix.sh ]; then 
     . /Users/lmickh/.nix-profile/etc/profile.d/nix.sh; 
 fi 
+if [ -e /home/lmickh/.nix-profile/etc/profile.d/nix.sh ]; then . /home/lmickh/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
