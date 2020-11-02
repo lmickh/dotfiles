@@ -97,6 +97,7 @@ scrolling:
 # To prevent unexpected behavior in these applications, it's also required to
 # change the `it` value in terminfo when altering this setting.
 # tabspaces: 8
+#tabspaces: 4
 
 # Font configuration (changes require restart)
 font:
