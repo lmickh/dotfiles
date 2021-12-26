@@ -19,7 +19,11 @@ alias grep="grep --color=auto"
 alias dotfiles="/usr/bin/env git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 
 alias kc="kubectl"
-complete -F __start_kubectl kc
+if [[ "$SHELL" == *"bash"* ]]; then
+  complete -F __start_kubectl kc
+elif [[ "$SHELL" == *"zsh"* ]]; then
+  compdef __start_kubectl kc
+fi
 
 alias pubip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias ips="sudo ifconfig -a | grep -o 'inet6\\? \\(addr:\\)\\?\\s\\?\\(\\(\\([0-9]\\+\\.\\)\\{3\\}[0-9]\\+\\)\\|[a-fA-F0-9:]\\+\\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
@@ -29,7 +33,7 @@ alias untar='tar xvf'
 alias cleangit="git fetch --prune ; git branch -lvv | cut -c3- | awk '/: gone]/ {print $1}' | xargs git branch -d"
 
 # Docker crap
-alias cleandocker="docker rm $(docker ps -a -q) && docker image rm $(docker images -q)"
+# alias cleandocker="docker rm $(docker ps -a -q) && docker image rm $(docker images -q)"
 alias dc="docker-compose"
 
 alias flushdns='sudo killall -HUP mDNSResponder && sudo killall mDNSResponderHelper &&  sudo dscacheutil -flushcache && echo "flushed"'
