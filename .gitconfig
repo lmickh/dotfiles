@@ -4,6 +4,7 @@
   protocol = https
 [alias]
   count   = !git shortlog -sn
+  prettylog = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 [color]
   diff = auto
   status = auto
@@ -12,9 +13,15 @@
 [core]
   excludesfile = ~/.gitignore
   editor = vim
+[github]
+  user = lmickh
+[gpg]
+  program = gpg
 [push]
   default = simple
 [user]
-    #name = Lucas Harms
+  name = Lucas Harms
+  email = lmickh@gmail.com
+  signingkey = AF9319E717429394
 [commit]
-	gpgSign = true
+  gpgSign = true
