@@ -11,6 +11,9 @@ if [[ ! "$(uname)" =~ Darwin ]]; then
   alias pbpaste='xclip -selection clipboard -o'
 fi
 
+if [ -x "$(command -v nvim)" ]; then
+  alias vim="nvim"
+fi
 
 alias ls="ls ${colorflag}"
 alias ll="ls -l"
