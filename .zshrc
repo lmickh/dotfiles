@@ -1,5 +1,13 @@
 #!/usr/bin/env zsh
 
+# Attach to local tmux
+if [[ -z "$TMUX" ]] && [[ "$TERM_PROGRAM" != "vscode" ]]; then
+  tmux attach -t default || tmux new -s default
+fi
+
+# dedup path
+typeset -aU path
+
 # Completions
 fpath=(~/.zsh/zsh-completions/src $fpath)
 
@@ -10,9 +18,6 @@ fi
 
 autoload -Uz compinit
 compinit
-
-export GOPATH=$HOME/code/gopath
-PATH="$HOME/bin:$PATH:/usr/local/go/bin:$GOPATH/bin:$(python3 -c 'import site; print(site.USER_BASE)')/bin:/usr/share/code/bin"
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -50,3 +55,4 @@ source ~/.aliases
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
