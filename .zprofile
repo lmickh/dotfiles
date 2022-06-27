@@ -7,7 +7,7 @@ fi
 path=(
 	$HOME/bin
 	/usr/local/{bin,sbin}
-	$PATH
+	$path
 	/usr/local/go/bin
 	$GOPATH/bin
 	$(python3 -c 'import site; print(site.USER_BASE)')/bin
