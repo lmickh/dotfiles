@@ -5,7 +5,10 @@ if [[ -f ~/.env ]]; then
   source ~/.env
 fi
 
-# added by Nix installer
-if [ -e /home/lmickh/.nix-profile/etc/profile.d/nix.sh ]; then 
-  . /home/lmickh/.nix-profile/etc/profile.d/nix.sh 
+export GOPATH=$HOME/code/gopath
+
+# Ensure that a non-login, non-interactive shell has a defined environment.
+if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
+

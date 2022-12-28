@@ -1,0 +1,21 @@
+brew "mas"
+brew "git-crypt"
+brew "gnupg"
+brew "bash"
+brew "htop"
+brew "gnu-tar"
+brew "reattach-to-user-namespace"
+brew "tmux"
+brew "neovim"
+cask "1password"
+cask "docker"
+# cask "dropbox"
+cask "firefox"
+cask "google-chrome"
+cask "kitty"
+cask "spotify"
+cask "visual-studio-code"
+tap "wez/wezterm"
+mas "Tailscale", id: 1475387142
+# mas "Xcode", id: 497799835
+
