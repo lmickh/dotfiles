@@ -31,6 +31,9 @@ HISTFILE=${ZDOTDIR:-$HOME}/.zsh_history
 HISTSIZE=2000
 SAVEHIST=1000
 
+setopt EXTENDED_HISTORY
+setopt HIST_EXPIRE_DUPS_FIRST
+
 # Default prompt
 PS1="%n@%m %1~ %# "
 
